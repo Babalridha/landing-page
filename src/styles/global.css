@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors matching original config */
+  --color-emerald-950: #002419;
+  --color-emerald-900: #003d29;
+  --color-emerald: #004d40;
+  --color-emerald-light: #00695c;
+
+  --color-gold: #c5a059;
+  --color-gold-dark: #a38448;
+  --color-gold-light: #d4b87d;
+
+  --color-ivory: #fdfcf8;
+
+  /* Font Families matching original config */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-arabic: "Amiri", serif;
+}
+
+/* Custom Styles */
+body {
+  background-color: #fdfcf8;
+  color: #002419;
+  overflow-x: hidden;
+}
+
+.glass-nav {
+  background: rgba(253, 252, 248, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.islamic-pattern {
+  background-color: #fdfcf8;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 7.5L40 5l-2.5 7.5L45 15l-7.5 2.5L40 25l-7.5-2.5L30 30l-2.5-7.5L20 25l2.5-7.5L15 15l7.5-2.5L20 5l7.5 2.5L30 0z' fill='%23c5a059' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.islamic-pattern-dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 7.5L40 5l-2.5 7.5L45 15l-7.5 2.5L40 25l-7.5-2.5L30 30l-2.5-7.5L20 25l2.5-7.5L15 15l7.5-2.5L20 5l7.5 2.5L30 0z' fill='%23c5a059' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.arch-mask {
+  clip-path: ellipse(50% 100% at 50% 100%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfcf8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003d29;
+  border: 3px solid #fdfcf8;
+  border-radius: 10px;
+}

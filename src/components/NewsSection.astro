@@ -1,0 +1,111 @@
+---
+const newsItems = [
+  {
+    title: 'BRISC 13 Closing Ceremony',
+    tag: 'YouTube',
+    iconName: 'youtube',
+    link: 'https://youtube.com',
+    type: 'video',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=600'
+  },
+  {
+    title: 'The Lofty Stations',
+    subtitle: 'By Shaykh Abbas Qummi',
+    tag: 'Publication',
+    iconName: 'book',
+    link: 'https://publications.babalridha.com',
+    type: 'book',
+    image: 'https://images.unsplash.com/photo-1544640808-32ca72ac7f37?auto=format&fit=crop&q=80&w=600'
+  },
+  {
+    title: 'Islamic Philosophy',
+    subtitle: 'By Dr. Leganhausen',
+    tag: 'Course',
+    iconName: 'graduation-cap',
+    link: '#',
+    type: 'course',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=600'
+  },
+  {
+    title: 'Mashhad Trip Highlights',
+    tag: 'Event',
+    iconName: 'map-pin',
+    link: '#',
+    type: 'event',
+    image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&q=80&w=600'
+  }
+];
+---
+
+<section class="py-24 bg-[#f8f6f0] border-y border-gold/10 relative overflow-hidden">
+  <!-- Decorative center logo background -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+    <svg width="400" height="400" viewBox="0 0 100 100" class="fill-gold">
+      <path d="M50 0l10 40h40l-32 25 12 40-30-24-30 24 12-40-32-25h40z"></path>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="font-serif text-4xl text-emerald-950 mb-3">Recent <span class="italic text-gold-dark font-normal">Announcements</span></h2>
+        <p class="font-sans text-emerald-900/60 text-sm tracking-wide uppercase font-bold">Latest from our research and academic departments</p>
+      </div>
+      <button class="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gold-dark border border-gold/30 px-6 py-2 rounded-full hover:bg-gold hover:text-emerald-950 transition-all cursor-pointer">
+        <span>Archive</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {newsItems.map((item) => (
+        <a 
+          href={item.link} 
+          class="group bg-white rounded-[32px] border border-gold/5 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all flex flex-col h-full overflow-hidden"
+        >
+          <!-- Card Image -->
+          <div class="h-40 overflow-hidden relative">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
+            />
+            <div class="absolute inset-0 bg-emerald-950/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg text-emerald-950 shadow-lg">
+              {item.iconName === 'youtube' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+              )}
+              {item.iconName === 'book' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 2v18"/></svg>
+              )}
+              {item.iconName === 'graduation-cap' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/><path d="M21.5 12v6"/></svg>
+              )}
+              {item.iconName === 'map-pin' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              )}
+            </div>
+          </div>
+
+          <div class="p-7 flex flex-col flex-1">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gold-dark opacity-60">{item.tag}</span>
+            </div>
+            <h3 class="font-serif text-2xl text-emerald-900 leading-snug mb-3 group-hover:text-gold transition-colors">
+              {item.title}
+            </h3>
+            {item.subtitle && (
+              <p class="text-xs text-emerald-950/40 font-medium italic mb-6 leading-relaxed">
+                {item.subtitle}
+              </p>
+            )}
+            <div class="mt-auto flex items-center text-[10px] font-bold text-gold-dark tracking-widest space-x-2">
+              <span>READ MORE</span>
+              <div class="h-px w-4 bg-gold-dark transition-all group-hover:w-8"></div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,199 @@
+---
+const hawzaDept = {
+  title: 'HAWZA',
+  subtitle: 'Hawza Education Dept',
+  desc: 'Structured long-form seminary training and research. The spiritual and intellectual heartbeat of our institute.',
+  iconName: 'book-open',
+  linkText: 'View Curriculum',
+  link: '#',
+  image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800'
+};
+
+const departments = [
+  {
+    title: 'OLP',
+    subtitle: 'Online Learning Platform',
+    desc: 'Self-paced learning for the modern era.',
+    iconName: 'graduation-cap',
+    linkText: 'Explore Courses',
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'BRISC',
+    subtitle: 'Intensive Short Course',
+    desc: 'Flagship summer programs in the holy cities of Iraq and Iran.',
+    iconName: 'laptop',
+    linkText: 'brisc.babalridha.com',
+    link: 'https://brisc.babalridha.com',
+    image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'RP',
+    subtitle: 'Research & Publication',
+    desc: 'Translating and publishing critical texts for the modern reader.',
+    iconName: 'globe',
+    linkText: 'publications.babalridha.com',
+    link: 'https://publications.babalridha.com',
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'Hawza Online',
+    subtitle: 'Farsi Language Program',
+    desc: 'Advanced seminary studies delivered in Persian.',
+    iconName: 'laptop',
+    linkText: 'hawza.babalridha.com',
+    link: 'https://hawza.babalridha.com',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'Lectures',
+    subtitle: 'Digital Repository',
+    desc: 'Hundreds of hours of scholarly seminars and series.',
+    iconName: 'play-circle',
+    linkText: 'Coming Soon',
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+    comingSoon: true
+  },
+  {
+    title: 'Ahsan',
+    subtitle: 'Gap Year Program',
+    desc: 'Spiritual journey for young adults transitioning to university.',
+    iconName: 'heart',
+    linkText: 'ahsan.babalridha.com',
+    link: 'https://ahsan.babalridha.com',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'Arbaeen Backpackers',
+    subtitle: 'Pilgrimage Program',
+    desc: 'Spiritual wilderness voyages for the dedicated seeker.',
+    iconName: 'compass',
+    linkText: 'Coming Soon',
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5c?auto=format&fit=crop&q=80&w=800',
+    comingSoon: true
+  },
+  {
+    title: 'BRi Kids!',
+    subtitle: 'Junior Education',
+    desc: 'Nurturing the next generation through playful, ethics-based learning.',
+    iconName: 'smile',
+    linkText: 'Coming Soon',
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800',
+    comingSoon: true
+  }
+];
+---
+
+<section id="departments" class="py-24 islamic-pattern border-y border-gold/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 space-y-4">
+      <div class="flex items-center justify-center space-x-4">
+        <div class="h-px w-8 bg-gold-dark"></div>
+        <span class="text-xs uppercase font-bold tracking-[0.3em] text-gold-dark">Our Faculties</span>
+        <div class="h-px w-8 bg-gold-dark"></div>
+      </div>
+      <h2 class="font-serif text-5xl text-emerald-900 italic">Institute <span class="not-italic">Departments</span></h2>
+    </div>
+
+    <!-- Specialized Hawza Header -->
+    <div class="mb-12">
+      <a 
+        href={hawzaDept.link}
+        class="group relative flex flex-col md:flex-row items-center bg-emerald-950 rounded-[40px] border-2 border-gold/30 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-1"
+      >
+        <div class="md:w-1/3 h-[300px] md:h-auto self-stretch relative overflow-hidden">
+           <div 
+            class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-40"
+            style={`background-image: url('${hawzaDept.image}')`}
+          ></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-950 via-transparent to-transparent hidden md:block"></div>
+        </div>
+        <div class="flex-1 p-8 md:p-12 relative z-10 text-ivory">
+          <div class="inline-flex items-center space-x-2 text-gold mb-6 uppercase font-bold tracking-[0.2em] text-[10px]">
+            <!-- BookOpen Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>The Core Foundation</span>
+          </div>
+          <h3 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 italic">{hawzaDept.title}</h3>
+          <p class="font-sans text-gold-light/80 uppercase tracking-widest text-xs font-bold mb-6">{hawzaDept.subtitle}</p>
+          <p class="font-sans text-lg text-ivory/80 leading-relaxed max-w-2xl mb-8">
+            {hawzaDept.desc}
+          </p>
+          <div class="inline-flex items-center space-x-3 text-gold font-bold uppercase tracking-widest text-xs pt-6 border-t border-gold/20">
+            <span>{hawzaDept.linkText}</span>
+            <!-- ArrowRight Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 transform group-hover:translate-x-2 transition-transform"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Departments Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {departments.map((dept) => (
+        <a 
+          href={dept.link}
+          class="group relative h-[360px] flex flex-col justify-between p-8 rounded-[32px] border-2 border-gold/10 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl overflow-hidden bg-white text-emerald-900 hover:border-gold/40"
+        >
+          <!-- Background Image with Dark Overlay -->
+          <div 
+            class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-10 group-hover:opacity-30"
+            style={`background-image: url('${dept.image}')`}
+          ></div>
+          <div class="absolute inset-0 z-1 bg-white/80 group-hover:bg-emerald-950/20"></div>
+
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-8">
+              <div class="p-4 inline-block rounded-2xl bg-gold/10 group-hover:bg-gold transition-colors duration-500">
+                {dept.iconName === 'book-open' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                )}
+                {dept.iconName === 'graduation-cap' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/><path d="M21.5 12v6"/></svg>
+                )}
+                {dept.iconName === 'laptop' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/><line x1="5" x2="19" y1="16" y2="16"/></svg>
+                )}
+                {dept.iconName === 'globe' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                )}
+                {dept.iconName === 'play-circle' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                )}
+                {dept.iconName === 'heart' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                )}
+                {dept.iconName === 'compass' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                )}
+                {dept.iconName === 'smile' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+                )}
+              </div>
+              {dept.comingSoon && (
+                <span class="bg-gold text-emerald-950 text-[8px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+            <h3 class="font-serif text-3xl mb-1">{dept.title}</h3>
+            <p class="text-[10px] uppercase tracking-widest font-bold mb-4 text-gold-dark">{dept.subtitle}</p>
+            <p class="font-sans text-sm leading-relaxed opacity-80">
+              {dept.desc}
+            </p>
+          </div>
+
+          <div class="relative z-10 flex items-center space-x-2 font-bold text-[10px] uppercase tracking-widest pt-4 border-t border-gold/10 transition-colors text-emerald-900 group-hover:text-gold-dark">
+            <span>{dept.linkText}</span>
+            <!-- ArrowRight Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 transform group-hover:translate-x-1 transition-transform"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

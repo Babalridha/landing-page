@@ -1,0 +1,177 @@
+---
+// Data arrays
+const coreAims = [
+  {
+    iconName: "users",
+    title: "Community Leadership",
+    desc: "Training scholars who possess deep knowledge of primary texts (Quran & Ahlulbayt) to lead and foster community growth."
+  },
+  {
+    iconName: "zap",
+    title: "Practical Skillsets",
+    desc: "Beyond theology, we equip scholars with vital management, counseling, and youth interaction skills."
+  },
+  {
+    iconName: "heart",
+    title: "Holistic Hawzah Life",
+    desc: "Providing spiritual guidance, advanced sciences, and meaningful opportunities for students and their families."
+  },
+  {
+    iconName: "target",
+    title: "Learn Practically",
+    desc: "Our active learning model goes beyond theory, utilizing discussion circles where logic and jurisprudence are put into direct practice."
+  }
+];
+
+const innovationAims = [
+  {
+    iconName: "laptop",
+    title: "Global Accessibility",
+    desc: "Accessible and self-paced: our Online Learning Platform (OLP) covers ideology, spirituality, and modern اجتماعی issues."
+  },
+  {
+    iconName: "book-open",
+    title: "Scholarly Research",
+    desc: "Producing rigorous English publications, academic translations, and engaging historical works."
+  },
+  {
+    iconName: "trending-up",
+    title: "Vision for Growth",
+    desc: "Expanding our Hawzah capacity through physical growth and strategic collaborative outreach."
+  }
+];
+---
+
+<section id="about" class="py-24 bg-ivory relative overflow-hidden">
+  <!-- Decorative side pattern -->
+  <div class="absolute left-0 top-0 bottom-0 w-24 islamic-pattern-dark opacity-10 pointer-events-none border-r border-gold/5"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      
+      <!-- Main Content Area -->
+      <div class="lg:col-span-7 space-y-12">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3 text-gold-dark font-bold text-[10px] uppercase tracking-[0.4em]">
+            <div class="h-px w-8 bg-gold-dark"></div>
+            <span>The Vision of Bab al-Ridha</span>
+          </div>
+          <h2 class="font-serif text-4xl md:text-5xl text-emerald-950 leading-tight">
+            Training Scholars to <br/>
+            <span class="italic text-gold font-normal">Lead Communities</span>
+          </h2>
+          <p class="font-sans text-lg text-emerald-900/70 leading-relaxed font-light max-w-2xl">
+            Bridging traditional seminary depth with modern societal challenges, we focus on developing 
+            leaders who are as proficient in counseling and management as they are in Jurisprudence and 
+            Philosophy.
+          </p>
+        </div>
+
+        <!-- Core Aims Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {coreAims.map((aim) => (
+            <div class="group p-8 rounded-[32px] bg-white border border-gold/10 hover:border-gold/30 hover:shadow-xl transition-all duration-500">
+              <div class="bg-gold/5 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-gold group-hover:bg-gold group-hover:text-emerald-950 transition-colors">
+                {aim.iconName === 'users' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                )}
+                {aim.iconName === 'zap' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                )}
+                {aim.iconName === 'heart' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                  </svg>
+                )}
+                {aim.iconName === 'target' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                )}
+              </div>
+              <h3 class="font-serif text-xl text-emerald-900 mb-3">{aim.title}</h3>
+              <p class="font-sans text-sm text-emerald-950/60 leading-relaxed">{aim.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Innovation Row -->
+        <div class="pt-8 border-t border-gold/10">
+          <h4 class="font-serif text-2xl text-emerald-900 mb-8 italic">Expanding <span class="not-italic">New Horizons</span></h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {innovationAims.map((aim) => (
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-gold">
+                  {aim.iconName === 'laptop' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                      <rect width="18" height="12" x="3" y="4" rx="2" ry="2"></rect>
+                      <line x1="2" x2="22" y1="20" y2="20"></line>
+                      <line x1="5" x2="19" y1="16" y2="16"></line>
+                    </svg>
+                  )}
+                  {aim.iconName === 'book-open' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                  )}
+                  {aim.iconName === 'trending-up' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                      <polyline points="16 7 22 7 22 13"></polyline>
+                    </svg>
+                  )}
+                  <span class="font-sans font-bold text-[10px] uppercase tracking-widest">{aim.title}</span>
+                </div>
+                <p class="font-sans text-[13px] text-emerald-900/50 leading-relaxed">
+                  {aim.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Video & Method Showcase -->
+      <div class="lg:col-span-5 sticky top-24">
+        <div class="relative">
+          <div class="relative p-3 bg-white border-2 border-gold/10 rounded-[44px] shadow-2xl overflow-hidden group">
+            <div class="aspect-[4/5] rounded-[36px] overflow-hidden relative shadow-inner bg-emerald-950">
+              <iframe 
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/ndSxGP6isU0" 
+                title="Bab al-Ridha Institute Introduction"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Decorative Background Element -->
+          <div class="absolute -top-12 -right-12 w-64 h-64 islamic-pattern-dark opacity-5 rounded-full pointer-events-none"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+</style>

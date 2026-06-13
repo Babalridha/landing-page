@@ -1,0 +1,100 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#fbf7ee] animate-bgPulse">
+  <!-- Light Emission Layer -->
+  <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+    <div class="w-[150%] h-[150%] bg-[radial-gradient(circle,_rgba(197,160,89,0.15)_0%,_transparent_60%)] animate-emitLight"></div>
+  </div>
+
+  <!-- Cinematic Background Layer -->
+  <div class="absolute inset-0 z-0">
+    <div 
+      class="absolute inset-0 bg-no-repeat bg-center opacity-60 mix-blend-multiply scale-100 translate-y-10"
+      style="background-image: url('https://www.babalridha.com/wp-content/uploads/2022/12/5540822-1.png'); background-size: contain;"
+    >
+    </div>
+    <!-- Soft sunburst/warm gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#fbf7ee]/20 to-[#fbf7ee]"></div>
+  </div>
+
+  <!-- Subtle Arch Framing Overlay - adjusted for warmer theme -->
+  <div class="absolute inset-0 z-1 pointer-events-none opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0,0 L0,100 L10,100 C10,100 10,20 50,20 C90,20 90,100 90,100 L100,100 L100,0 Z" fill="#c5a059"></path>
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+    <div class="mb-8 inline-block">
+      <div class="flex items-center justify-center space-x-6">
+        <div class="h-px w-12 bg-gold-dark/30"></div>
+        <span class="font-arabic text-gold-dark text-2xl md:text-4xl opacity-0 animate-fadeIn select-none">
+          بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+        </span>
+        <div class="h-px w-12 bg-gold-dark/30"></div>
+      </div>
+      <h2 class="font-serif text-emerald-900 tracking-[0.3em] text-xs font-bold mt-8 opacity-0 animate-fadeInDelay">
+        BAB AL-RIDHA INSTITUTE
+      </h2>
+    </div>
+
+    <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-emerald-950 mb-10 leading-[1.15] opacity-0 animate-slideUpTitle max-w-5xl mx-auto">
+      Learn to see the world through an <br />
+      <span class="italic text-gold font-normal underline decoration-gold/20 underline-offset-[12px]">Islamic lens</span>
+    </h1>
+
+    <p class="max-w-2xl mx-auto font-sans text-base md:text-lg text-emerald-900/70 mb-14 leading-relaxed tracking-wide opacity-0 animate-slideUpText">
+      A center for intellectual growth, bridging the timeless wisdom of 
+      the Ahlulbayt with the complex challenges of the modern era.
+    </p>
+  </div>
+
+  <a href="#about" class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer group z-20" aria-label="Scroll to about section">
+    <div class="p-2 border border-emerald-900/10 rounded-full group-hover:border-gold transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-900/40 h-6 w-6 group-hover:text-gold transition-colors">
+        <line x1="12" x2="12" y1="5" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </div>
+  </a>
+</section>
+
+<style>
+  /* Custom Animations using scoped CSS */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes bgPulse {
+    0%, 100% { background-color: #fbf7ee; }
+    50% { background-color: #f3ebd6; }
+  }
+  @keyframes emitLight {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+
+  .animate-bgPulse {
+    animation: bgPulse 8s ease-in-out infinite;
+  }
+  .animate-emitLight {
+    animation: emitLight 8s ease-in-out infinite;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  .animate-fadeInDelay {
+    animation: fadeIn 1.2s ease-out 0.2s forwards;
+  }
+  .animate-slideUpTitle {
+    animation: slideUp 1.2s ease-out 0.4s forwards;
+  }
+  .animate-slideUpText {
+    animation: slideUp 1.2s ease-out 0.6s forwards;
+  }
+</style>

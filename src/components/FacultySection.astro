@@ -1,0 +1,111 @@
+---
+const coreLeadership = {
+  name: 'Shaykh Amini',
+  title: 'Head Of Institute',
+  img: 'https://hawza.babalridha.com/storage/about/team/agha-amini.jpg'
+};
+
+const subLeadership = {
+  name: 'Shaykh Miqdad R. Alidina',
+  title: 'Assistant Head',
+  img: 'https://hawza.babalridha.com/storage/about/team/miqdad-rajabali.jpg'
+};
+
+const facultyGrid = [
+  {
+    name: 'Syed Kamil Kazmi',
+    title: 'Head of OLP',
+    img: 'https://hawza.babalridha.com/storage/about/team/syed-kamil.jpg'
+  },
+  {
+    name: 'Shaykh Mustafa Mukhtar',
+    title: 'Head of Research',
+    img: 'https://onlinelearning.babalridha.com/wp-content/uploads/2020/04/Sheikh-Mustafa_460.jpg'
+  },
+  {
+    name: 'Shaykh Ali Rajani',
+    title: 'Head of BRISC',
+    img: 'https://onlinelearning.babalridha.com/wp-content/uploads/2021/05/Shaykh-Ali-1-e1620759470752.jpeg'
+  },
+  {
+    name: 'Shaykh Baqir Sadiq',
+    title: 'Hawzah Management',
+    img: 'https://www.babalridha.com/wp-content/uploads/2022/12/Group-460.png'
+  },
+  {
+    name: 'Sayyid Ruhullah Musawi',
+    title: 'Hawzah Management',
+    img: 'https://www.babalridha.com/wp-content/uploads/2022/12/Group-461.png'
+  }
+];
+---
+
+<section id="faculty" class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-24 space-y-4">
+      <div class="flex items-center justify-center space-x-4">
+        <div class="h-px w-8 bg-gold-dark"></div>
+        <span class="text-xs uppercase font-bold tracking-[0.3em] text-gold-dark">Our Team</span>
+        <div class="h-px w-8 bg-gold-dark"></div>
+      </div>
+      <h2 class="font-serif text-5xl text-emerald-900 italic">Meet Our <span class="not-italic">Team</span></h2>
+    </div>
+
+    <div class="space-y-24">
+      <!-- Leadership Stack -->
+      <div class="flex flex-col items-center space-y-20">
+        <!-- Core Leadership (Large Card) -->
+        <div class="group flex flex-col items-center text-center">
+          <div class="relative mb-8">
+            <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
+            <div class="w-64 h-64 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
+              <img 
+                src={coreLeadership.img} 
+                alt={coreLeadership.name} 
+                class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
+              />
+            </div>
+          </div>
+          <h3 class="font-serif text-3xl text-emerald-900 mb-1 leading-tight">{coreLeadership.name}</h3>
+          <p class="font-sans font-bold text-gold-dark text-[10px] uppercase tracking-[0.2em]">{coreLeadership.title}</p>
+        </div>
+
+        <!-- Sub Leadership (Medium Card) -->
+        <div class="group flex flex-col items-center text-center">
+          <div class="relative mb-8">
+            <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
+            <div class="w-52 h-52 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
+              <img 
+                src={subLeadership.img} 
+                alt={subLeadership.name} 
+                class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
+              />
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-emerald-900 mb-1 leading-tight">{subLeadership.name}</h3>
+          <p class="font-sans font-bold text-gold-dark text-[10px] uppercase tracking-[0.2em]">{subLeadership.title}</p>
+        </div>
+      </div>
+
+      <!-- Faculty Grid (Small Cards) -->
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12 place-items-center max-w-5xl mx-auto">
+        {facultyGrid.map((person) => (
+          <div class="group flex flex-col items-center text-center">
+            <div class="relative mb-8">
+              <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
+              <div class="w-40 h-40 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
+                <img 
+                  src={person.img} 
+                  alt={person.name} 
+                  class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
+                />
+              </div>
+            </div>
+            <h3 class="font-serif text-xl text-emerald-900 mb-1 leading-tight">{person.name}</h3>
+            <p class="font-sans font-bold text-gold-dark text-[10px] uppercase tracking-[0.2em]">{person.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

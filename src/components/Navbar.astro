@@ -1,0 +1,151 @@
+---
+const navLinks = [
+  { name: 'Mission', href: '#about' },
+  { name: 'Departments', href: '#departments' },
+  { name: 'Team', href: '#faculty' },
+  { name: 'Contact Us', href: '#contact' },
+];
+---
+
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo Section -->
+      <div id="logo-button" class="flex-shrink-0 flex items-center space-x-4 group cursor-pointer">
+        <div class="h-14 w-auto overflow-hidden flex items-center">
+          <img 
+            src="https://brisc.babalridha.com/wp-content/uploads/2018/03/BRI_Logo-1.png" 
+            alt="Bab al-Ridha Institute Logo" 
+            class="h-full w-auto object-contain transition-all duration-300"
+          />
+        </div>
+        <div class="hidden sm:block">
+          <span id="logo-text" class="block font-serif text-xl font-bold leading-none text-emerald-950 transition-colors duration-300">BAB AL-RIDHA</span>
+          <span id="logo-subtext" class="block font-sans text-[10px] tracking-[0.2em] uppercase font-medium text-emerald-900/80 transition-colors duration-300">Institute of Islamic Thought</span>
+        </div>
+      </div>
+      
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="nav-link font-sans text-sm font-semibold tracking-wide hover:text-gold transition-colors duration-300 text-emerald-950"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" aria-label="Toggle Menu" class="text-emerald-950 transition-colors duration-300 focus:outline-none">
+          <!-- Menu Icon -->
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 hidden">
+            <line x1="18" x2="6" y1="6" y2="18"></line>
+            <line x1="6" x2="18" y1="6" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-ivory border-b border-gold/10 px-4 py-6 space-y-4 animate-in fade-in slide-in-from-top-4">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="mobile-nav-link block font-sans text-lg font-medium text-emerald hover:text-gold"
+      >
+        {link.name}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  /* Scroll CSS styles overrides */
+  #navbar.is-scrolled {
+    background: rgba(253, 252, 248, 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  #navbar.is-scrolled #logo-text {
+    color: #004d40 !important; /* emerald */
+  }
+
+  #navbar.is-scrolled #logo-subtext {
+    color: rgba(0, 77, 64, 0.7) !important; /* emerald/70 */
+  }
+
+  #navbar.is-scrolled .nav-link {
+    color: #004d40 !important; /* emerald */
+  }
+
+  #navbar.is-scrolled #menu-toggle {
+    color: #004d40 !important; /* emerald */
+  }
+</style>
+
+<script>
+  // Dynamic Scroll Behavior
+  const navbar = document.getElementById('navbar');
+  const logoButton = document.getElementById('logo-button');
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('is-scrolled');
+    } else {
+      navbar?.classList.remove('is-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  // Initial check
+  handleScroll();
+
+  // Scroll to top when logo is clicked
+  logoButton?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile Menu Toggle Behavior
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  const toggleMenu = () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+  };
+
+  menuToggle?.addEventListener('click', toggleMenu);
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>
