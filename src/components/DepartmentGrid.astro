@@ -1,4 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import hawzaImg from "../assets/images/Hawza.jpg";
+import olpImg from "../assets/images/OLP.jpg";
+import briscImg from "../assets/images/BRISC.jpg";
+import rpImg from "../assets/images/RP.jpg";
+import maImg from "../assets/images/MA.jpg";
+import ahsanImg from "../assets/images/ahsan.webp";
+import lecturesImg from "../assets/images/lectures.jpeg";
+import backpackersImg from "../assets/images/backpackers.jpg";
+import kidsImg from "../assets/images/kids.jpg";
+
 const hawzaDept = {
   title: 'HAWZA',
   subtitle: 'Hawza Education Dept',
@@ -6,7 +17,7 @@ const hawzaDept = {
   iconName: 'book-open',
   linkText: 'View Curriculum',
   link: '#',
-  image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800'
+  image: hawzaImg
 };
 
 const departments = [
@@ -17,7 +28,7 @@ const departments = [
     iconName: 'graduation-cap',
     linkText: 'Explore Courses',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800'
+    image: olpImg
   },
   {
     title: 'BRISC',
@@ -26,7 +37,7 @@ const departments = [
     iconName: 'laptop',
     linkText: 'brisc.babalridha.com',
     link: 'https://brisc.babalridha.com',
-    image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=800'
+    image: briscImg
   },
   {
     title: 'RP',
@@ -35,7 +46,7 @@ const departments = [
     iconName: 'globe',
     linkText: 'publications.babalridha.com',
     link: 'https://publications.babalridha.com',
-    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800'
+    image: rpImg
   },
   {
     title: 'Hawza Online',
@@ -44,7 +55,7 @@ const departments = [
     iconName: 'laptop',
     linkText: 'hawza.babalridha.com',
     link: 'https://hawza.babalridha.com',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800'
+    image: maImg
   },
   {
     title: 'Lectures',
@@ -53,7 +64,7 @@ const departments = [
     iconName: 'play-circle',
     linkText: 'Coming Soon',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+    image: lecturesImg,
     comingSoon: true
   },
   {
@@ -63,7 +74,7 @@ const departments = [
     iconName: 'heart',
     linkText: 'ahsan.babalridha.com',
     link: 'https://ahsan.babalridha.com',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'
+    image: ahsanImg
   },
   {
     title: 'Arbaeen Backpackers',
@@ -72,7 +83,7 @@ const departments = [
     iconName: 'compass',
     linkText: 'Coming Soon',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5c?auto=format&fit=crop&q=80&w=800',
+    image: backpackersImg,
     comingSoon: true
   },
   {
@@ -82,7 +93,7 @@ const departments = [
     iconName: 'smile',
     linkText: 'Coming Soon',
     link: '#',
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800',
+    image: kidsImg,
     comingSoon: true
   }
 ];
@@ -106,10 +117,11 @@ const departments = [
         class="group relative flex flex-col md:flex-row items-center bg-emerald-950 rounded-[40px] border-2 border-gold/30 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-1"
       >
         <div class="md:w-1/3 h-[300px] md:h-auto self-stretch relative overflow-hidden">
-           <div 
-            class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-40"
-            style={`background-image: url('${hawzaDept.image}')`}
-          ></div>
+          <Image 
+            src={hawzaDept.image} 
+            alt={hawzaDept.title} 
+            class="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-40 pointer-events-none"
+          />
           <div class="absolute inset-0 bg-gradient-to-r from-emerald-950 via-transparent to-transparent hidden md:block"></div>
         </div>
         <div class="flex-1 p-8 md:p-12 relative z-10 text-ivory">
@@ -140,10 +152,11 @@ const departments = [
           class="group relative h-[360px] flex flex-col justify-between p-8 rounded-[32px] border-2 border-gold/10 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl overflow-hidden bg-white text-emerald-900 hover:border-gold/40"
         >
           <!-- Background Image with Dark Overlay -->
-          <div 
-            class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-10 group-hover:opacity-30"
-            style={`background-image: url('${dept.image}')`}
-          ></div>
+          <Image 
+            src={dept.image} 
+            alt={dept.title} 
+            class="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-10 group-hover:opacity-30 pointer-events-none"
+          />
           <div class="absolute inset-0 z-1 bg-white/80 group-hover:bg-emerald-950/20"></div>
 
           <div class="relative z-10">

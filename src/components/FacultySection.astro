@@ -1,41 +1,50 @@
 ---
+import { Image } from 'astro:assets';
+import maImg from "../assets/images/MA.jpg";
+import arImg from '../assets/images/AR.jpg';
+import kkImg from '../assets/images/KK.jpg';
+import mbsImg from '../assets/images/MBS.jpg';
+import mmImg from '../assets/images/MM.jpg';
+import mrImg from '../assets/images/MR.jpg';
+import srmImg from '../assets/images/SRM.png';
+
 const coreLeadership = {
   name: 'Shaykh Amini',
   title: 'Head Of Institute',
-  img: 'https://hawza.babalridha.com/storage/about/team/agha-amini.jpg'
+  img: maImg,
 };
 
 const subLeadership = {
   name: 'Shaykh Miqdad R. Alidina',
   title: 'Assistant Head',
-  img: 'https://hawza.babalridha.com/storage/about/team/miqdad-rajabali.jpg'
+  img: mrImg
 };
 
 const facultyGrid = [
   {
     name: 'Syed Kamil Kazmi',
     title: 'Head of OLP',
-    img: 'https://hawza.babalridha.com/storage/about/team/syed-kamil.jpg'
+    img: kkImg
   },
   {
     name: 'Shaykh Mustafa Mukhtar',
     title: 'Head of Research',
-    img: 'https://onlinelearning.babalridha.com/wp-content/uploads/2020/04/Sheikh-Mustafa_460.jpg'
+    img: mmImg
   },
   {
     name: 'Shaykh Ali Rajani',
     title: 'Head of BRISC',
-    img: 'https://onlinelearning.babalridha.com/wp-content/uploads/2021/05/Shaykh-Ali-1-e1620759470752.jpeg'
+    img: arImg
   },
   {
     name: 'Shaykh Baqir Sadiq',
     title: 'Hawzah Management',
-    img: 'https://www.babalridha.com/wp-content/uploads/2022/12/Group-460.png'
+    img: mbsImg
   },
   {
     name: 'Sayyid Ruhullah Musawi',
     title: 'Hawzah Management',
-    img: 'https://www.babalridha.com/wp-content/uploads/2022/12/Group-461.png'
+    img: srmImg
   }
 ];
 ---
@@ -59,7 +68,7 @@ const facultyGrid = [
           <div class="relative mb-8">
             <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
             <div class="w-64 h-64 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
-              <img 
+              <Image 
                 src={coreLeadership.img} 
                 alt={coreLeadership.name} 
                 class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
@@ -75,7 +84,7 @@ const facultyGrid = [
           <div class="relative mb-8">
             <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
             <div class="w-52 h-52 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
-              <img 
+              <Image 
                 src={subLeadership.img} 
                 alt={subLeadership.name} 
                 class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
@@ -94,7 +103,7 @@ const facultyGrid = [
             <div class="relative mb-8">
               <div class="absolute inset-0 bg-gold/10 rounded-full blur-xl group-hover:bg-gold/20 transition-all duration-1000"></div>
               <div class="w-40 h-40 relative rounded-full overflow-hidden border-2 border-gold p-1.5 transition-all duration-700 group-hover:p-1">
-                <img 
+                <Image 
                   src={person.img} 
                   alt={person.name} 
                   class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" 
