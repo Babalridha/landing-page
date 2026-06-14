@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { name: 'Mission', href: '#about' },
-  { name: 'Departments', href: '#departments' },
-  { name: 'Team', href: '#faculty' },
-  { name: 'Contact Us', href: '#contact' },
+  { name: 'Mission', href: '/#about' },
+  { name: 'Departments', href: '/#departments' },
+  { name: 'Team', href: '/#faculty' },
+  { name: 'Contact Us', href: '/#contact' },
 ];
 ---
 
@@ -11,7 +11,7 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <!-- Logo Section -->
-      <div id="logo-button" class="flex-shrink-0 flex items-center space-x-4 group cursor-pointer">
+      <a href="/" id="logo-button" class="flex-shrink-0 flex items-center space-x-4 group cursor-pointer">
         <div class="h-14 w-auto overflow-hidden flex items-center">
           <img 
             src="https://brisc.babalridha.com/wp-content/uploads/2018/03/BRI_Logo-1.png" 
@@ -23,7 +23,7 @@ const navLinks = [
           <span id="logo-text" class="block font-serif text-xl font-bold leading-none text-emerald-950 transition-colors duration-300">BAB AL-RIDHA</span>
           <span id="logo-subtext" class="block font-sans text-[10px] tracking-[0.2em] uppercase font-medium text-emerald-900/80 transition-colors duration-300">Institute of Islamic Thought</span>
         </div>
-      </div>
+      </a>
       
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center space-x-8">
@@ -35,6 +35,12 @@ const navLinks = [
             {link.name}
           </a>
         ))}
+        <a
+          href="/donate"
+          class="bg-gold text-emerald-950 font-sans text-xs font-bold uppercase tracking-widest px-6 py-2.5 rounded-full hover:bg-emerald-950 hover:text-gold transition-all shadow cursor-pointer ml-2"
+        >
+          Donate
+        </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
@@ -66,6 +72,12 @@ const navLinks = [
         {link.name}
       </a>
     ))}
+    <a
+      href="/donate"
+      class="mobile-nav-link block text-center bg-gold text-emerald-950 font-sans text-sm font-bold uppercase tracking-widest py-3 rounded-2xl hover:bg-emerald-950 hover:text-gold transition-all shadow cursor-pointer mt-4"
+    >
+      Donate
+    </a>
   </div>
 </nav>
 
@@ -114,9 +126,12 @@ const navLinks = [
   // Initial check
   handleScroll();
 
-  // Scroll to top when logo is clicked
-  logoButton?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Scroll to top when logo is clicked (only if on homepage)
+  logoButton?.addEventListener('click', (e) => {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 
   // Mobile Menu Toggle Behavior

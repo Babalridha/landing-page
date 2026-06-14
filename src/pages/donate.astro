@@ -1,0 +1,327 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Support Our Mission | Bab al-Ridha Institute" description="Empower communities by supporting seminary training, academic publications, and digital outreach.">
+  <div class="min-h-screen flex flex-col selection:bg-gold selection:text-white">
+    <Navbar />
+
+    <main class="flex-grow pt-32 pb-24 bg-[#f8f6f0] relative overflow-hidden">
+      <!-- Decorative background arches -->
+      <div class="absolute top-1/4 left-0 w-96 h-96 islamic-pattern-dark opacity-[0.03] pointer-events-none -translate-x-1/2 rounded-full"></div>
+      <div class="absolute bottom-1/4 right-0 w-96 h-96 islamic-pattern-dark opacity-[0.03] pointer-events-none translate-x-1/2 rounded-full"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-16 space-y-4">
+          <div class="flex items-center justify-center space-x-4">
+            <div class="h-px w-8 bg-gold-dark"></div>
+            <span class="text-xs uppercase font-bold tracking-[0.3em] text-gold-dark">Sadaqah & Khums</span>
+            <div class="h-px w-8 bg-gold-dark"></div>
+          </div>
+          <h1 class="font-serif text-5xl text-emerald-900 italic">Support the <span class="not-italic">Mission</span></h1>
+          <p class="font-sans text-emerald-900/60 leading-relaxed max-w-xl mx-auto text-sm md:text-base font-light">
+            Your contributions directly support seminary students, critical research translations, and digital infrastructure for global Shia Islamic education.
+          </p>
+        </div>
+
+        <!-- Donation Form Card -->
+        <div class="bg-white rounded-[40px] border border-gold/10 shadow-2xl p-8 md:p-12">
+          <form id="donation-form" class="space-y-8">
+            
+            <!-- Frequency Selector -->
+            <div class="space-y-3">
+              <label class="block text-xs uppercase tracking-[0.2em] font-bold text-emerald-950/70">Frequency</label>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="relative flex items-center justify-center py-4 px-6 border-2 border-gold rounded-2xl cursor-pointer hover:bg-gold/5 transition-all group font-sans text-sm font-semibold text-emerald-950">
+                  <input type="radio" name="frequency" value="once" checked class="sr-only" />
+                  <span class="frequency-indicator absolute top-3 right-3 w-4 h-4 rounded-full border-2 border-gold flex items-center justify-center">
+                    <span class="inner-indicator w-2 h-2 rounded-full bg-gold hidden"></span>
+                  </span>
+                  One-time Donation
+                </label>
+                <label class="relative flex items-center justify-center py-4 px-6 border border-emerald-900/10 rounded-2xl cursor-pointer hover:bg-gold/5 transition-all group font-sans text-sm font-semibold text-emerald-900/70">
+                  <input type="radio" name="frequency" value="monthly" class="sr-only" />
+                  <span class="frequency-indicator absolute top-3 right-3 w-4 h-4 rounded-full border border-emerald-900/20 flex items-center justify-center">
+                    <span class="inner-indicator w-2 h-2 rounded-full bg-gold hidden"></span>
+                  </span>
+                  Monthly Support
+                </label>
+              </div>
+            </div>
+
+            <!-- Amount Preset Grid -->
+            <div class="space-y-3">
+              <label class="block text-xs uppercase tracking-[0.2em] font-bold text-emerald-950/70">Donation Amount ($ USD)</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {['25', '50', '100', '250'].map((amount, idx) => (
+                  <button 
+                    type="button" 
+                    data-amount={amount}
+                    class={`amount-btn py-4 border rounded-2xl font-sans text-lg font-bold text-emerald-900 transition-all cursor-pointer ${
+                      amount === '100' ? 'border-2 border-gold bg-gold/5' : 'border-emerald-900/10 hover:border-gold hover:bg-gold/5'
+                    }`}
+                  >
+                    ${amount}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <!-- Custom Amount Input -->
+            <div class="relative">
+              <span class="absolute left-6 top-1/2 -translate-y-1/2 font-sans font-bold text-xl text-emerald-950/40">$</span>
+              <input 
+                type="number" 
+                id="custom-amount" 
+                placeholder="Enter custom amount" 
+                class="w-full pl-12 pr-6 py-5 border border-emerald-900/15 rounded-2xl font-sans text-emerald-950 placeholder-emerald-950/30 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
+              />
+            </div>
+
+            <!-- User Info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="donor-name" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-950/60">Full Name</label>
+                <input 
+                  type="text" 
+                  id="donor-name" 
+                  required
+                  placeholder="e.g. Ali Reza" 
+                  class="w-full px-6 py-4 border border-emerald-900/15 rounded-2xl font-sans text-emerald-950 placeholder-emerald-950/30 focus:outline-none focus:border-gold transition-all"
+                />
+              </div>
+              <div class="space-y-2">
+                <label for="donor-email" class="block text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-950/60">Email Address</label>
+                <input 
+                  type="email" 
+                  id="donor-email" 
+                  required
+                  placeholder="e.g. ali@example.com" 
+                  class="w-full px-6 py-4 border border-emerald-900/15 rounded-2xl font-sans text-emerald-950 placeholder-emerald-950/30 focus:outline-none focus:border-gold transition-all"
+                />
+              </div>
+            </div>
+
+            <!-- Khums checkbox -->
+            <label class="flex items-start space-x-3 cursor-pointer group select-none">
+              <input type="checkbox" id="is-khums" class="sr-only peer" />
+              <div class="w-5 h-5 rounded-md border border-emerald-900/20 flex items-center justify-center mt-0.5 peer-checked:border-gold peer-checked:bg-gold text-emerald-950 transition-colors">
+                <!-- Check Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 hidden peer-checked:block"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <span class="block font-sans text-sm font-semibold text-emerald-950">This is a Khums contribution</span>
+                <span class="block text-xs text-emerald-950/50">Please allocate this donation to the Sahm al-Imam / Sahm al-Sadat portion of Khums.</span>
+              </div>
+            </label>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="w-full bg-emerald-950 text-gold py-5 rounded-3xl font-sans font-bold uppercase tracking-[0.2em] text-sm hover:bg-emerald-900 hover:shadow-xl hover:translate-y-[-1px] transition-all flex items-center justify-center space-x-3 cursor-pointer shadow-md"
+            >
+              <span>Proceed to Payment</span>
+              <!-- CreditCard Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5.5 w-5.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+
+  <!-- Stripe Redirect Mockup Modal (Full Screen Overlay) -->
+  <div 
+    id="redirect-modal" 
+    class="fixed inset-0 z-[100] bg-emerald-950/95 backdrop-blur-md flex flex-col items-center justify-center text-center px-4 hidden transition-all duration-500"
+  >
+    <div class="max-w-md space-y-8 animate-in fade-in zoom-in duration-300">
+      
+      <!-- Premium Spinner -->
+      <div class="relative flex items-center justify-center">
+        <!-- Glow backing -->
+        <div class="absolute w-24 h-24 bg-gold/10 rounded-full blur-xl animate-pulse"></div>
+        <svg class="animate-spin h-20 w-20 text-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </div>
+
+      <div class="space-y-4">
+        <h3 id="modal-heading" class="font-serif text-3xl text-ivory">Securing Connection...</h3>
+        <p id="modal-text" class="font-sans text-ivory/60 text-sm leading-relaxed max-w-sm mx-auto">
+          Redirecting to Stripe secure checkout. Please do not refresh the page or click back.
+        </p>
+      </div>
+      
+      <!-- Mockup Dialog Box (Revealed after spinner timer) -->
+      <div id="mockup-alert" class="hidden bg-white/5 border border-gold/20 p-6 rounded-3xl space-y-6 text-left animate-in slide-in-from-bottom-8 duration-500">
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2 text-gold font-bold uppercase tracking-widest text-[10px]">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+            <span>Developer Sandbox</span>
+          </div>
+          <h4 class="font-serif text-xl text-ivory">Stripe Checkout Redirection</h4>
+          <p class="font-sans text-xs text-ivory/70 leading-relaxed">
+            This checkout page is fully styled and wireframed. To connect live Stripe payments, call Stripe's checkout session API in a backend route and redirect to <code class="bg-white/10 px-1.5 py-0.5 rounded text-gold">session.url</code> here.
+          </p>
+        </div>
+        
+        <!-- Summary Box -->
+        <div class="bg-white/5 rounded-2xl p-4 space-y-2 text-xs">
+          <div class="flex justify-between"><span class="opacity-50">Donor Name:</span><span id="summary-name" class="font-bold"></span></div>
+          <div class="flex justify-between"><span class="opacity-50">Donation Amount:</span><span id="summary-amount" class="font-bold text-gold"></span></div>
+          <div class="flex justify-between"><span class="opacity-50">Frequency:</span><span id="summary-frequency" class="font-bold uppercase tracking-wider text-[9px] bg-gold/15 px-2 py-0.5 rounded"></span></div>
+          <div id="summary-khums-row" class="flex justify-between hidden"><span class="opacity-50">Khums Portion:</span><span class="font-bold text-gold">Yes</span></div>
+        </div>
+
+        <div class="flex gap-4">
+          <button 
+            type="button" 
+            id="close-modal" 
+            class="flex-1 border border-white/10 hover:border-white/30 text-white py-3.5 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer text-center"
+          >
+            Go Back
+          </button>
+          <a 
+            href="/" 
+            class="flex-1 bg-gold hover:bg-gold-light text-emerald-950 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer text-center"
+          >
+            Home
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Custom checked states for Radio button indicators */
+  label:has(input:checked) {
+    border-color: #d4af37 !important; /* gold */
+    background-color: rgba(212, 175, 55, 0.05) !important;
+    color: #022c22 !important; /* emerald-950 */
+  }
+
+  label:has(input:checked) .frequency-indicator {
+    border-color: #d4af37 !important;
+  }
+
+  label:has(input:checked) .inner-indicator {
+    display:block !important;
+  }
+</style>
+
+<script>
+  let selectedAmount = '100';
+
+  const amountButtons = document.querySelectorAll('.amount-btn');
+  const customAmountInput = document.getElementById('custom-amount') as HTMLInputElement;
+  const donationForm = document.getElementById('donation-form');
+  const redirectModal = document.getElementById('redirect-modal');
+  const modalHeading = document.getElementById('modal-heading');
+  const modalText = document.getElementById('modal-text');
+  const mockupAlert = document.getElementById('mockup-alert');
+  const closeModalBtn = document.getElementById('close-modal');
+  
+  // Summary outputs
+  const summaryName = document.getElementById('summary-name');
+  const summaryAmount = document.getElementById('summary-amount');
+  const summaryFrequency = document.getElementById('summary-frequency');
+  const summaryKhumsRow = document.getElementById('summary-khums-row');
+
+  // Handle Preset amount selection
+  amountButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Clear custom input
+      if (customAmountInput) customAmountInput.value = '';
+      
+      // Reset all buttons style
+      amountButtons.forEach(b => {
+        b.classList.remove('border-2', 'border-gold', 'bg-gold/5');
+        b.classList.add('border-emerald-900/10', 'hover:border-gold', 'hover:bg-gold/5');
+      });
+
+      // Highlight selected
+      const target = e.currentTarget as HTMLButtonElement;
+      target.classList.add('border-2', 'border-gold', 'bg-gold/5');
+      target.classList.remove('border-emerald-900/10', 'hover:border-gold', 'hover:bg-gold/5');
+      selectedAmount = target.getAttribute('data-amount') || '100';
+    });
+  });
+
+  // Handle Custom Amount Focus/Input
+  customAmountInput?.addEventListener('input', () => {
+    // Reset preset buttons styling
+    amountButtons.forEach(b => {
+      b.classList.remove('border-2', 'border-gold', 'bg-gold/5');
+      b.classList.add('border-emerald-900/10', 'hover:border-gold', 'hover:bg-gold/5');
+    });
+    selectedAmount = customAmountInput.value || '0';
+  });
+
+  // Handle Form Submission with Mock Stripe loader
+  donationForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const donorName = (document.getElementById('donor-name') as HTMLInputElement)?.value;
+    const donorEmail = (document.getElementById('donor-email') as HTMLInputElement)?.value;
+    const frequencyVal = (document.querySelector('input[name="frequency"]:checked') as HTMLInputElement)?.value;
+    const isKhums = (document.getElementById('is-khums') as HTMLInputElement)?.checked;
+
+    const finalAmount = customAmountInput?.value ? customAmountInput.value : selectedAmount;
+
+    // Set summary contents
+    if (summaryName) summaryName.textContent = donorName;
+    if (summaryAmount) summaryAmount.textContent = `$${finalAmount}`;
+    if (summaryFrequency) summaryFrequency.textContent = frequencyVal === 'monthly' ? 'Monthly' : 'One-time';
+    if (summaryKhumsRow) {
+      if (isKhums) {
+        summaryKhumsRow.classList.remove('hidden');
+      } else {
+        summaryKhumsRow.classList.add('hidden');
+      }
+    }
+
+    // Open Redirect Modal
+    if (redirectModal) {
+      redirectModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Step-by-step mockup animation flow
+    setTimeout(() => {
+      if (modalHeading) modalHeading.textContent = "Setting up Payment Session...";
+      if (modalText) modalText.textContent = "Negotiating secure details with Stripe gateway API...";
+    }, 1200);
+
+    setTimeout(() => {
+      if (modalHeading) modalHeading.textContent = "Redirection Alert";
+      if (modalText) modalText.textContent = "Checkout session created successfully.";
+      // Show details dialog
+      if (mockupAlert) mockupAlert.classList.remove('hidden');
+    }, 2500);
+  });
+
+  // Close redirection modal
+  closeModalBtn?.addEventListener('click', () => {
+    if (redirectModal) {
+      redirectModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      
+      // Reset Modal contents
+      if (modalHeading) modalHeading.textContent = "Securing Connection...";
+      if (modalText) modalText.textContent = "Redirecting to Stripe secure checkout. Please do not refresh the page or click back.";
+      if (mockupAlert) mockupAlert.classList.add('hidden');
+    }
+  });
+</script>

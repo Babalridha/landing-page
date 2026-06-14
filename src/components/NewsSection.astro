@@ -1,40 +1,5 @@
 ---
-const newsItems = [
-  {
-    title: 'BRISC 13 Closing Ceremony',
-    tag: 'YouTube',
-    iconName: 'youtube',
-    link: 'https://youtube.com',
-    type: 'video',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=600'
-  },
-  {
-    title: 'The Lofty Stations',
-    subtitle: 'By Shaykh Abbas Qummi',
-    tag: 'Publication',
-    iconName: 'book',
-    link: 'https://publications.babalridha.com',
-    type: 'book',
-    image: 'https://images.unsplash.com/photo-1544640808-32ca72ac7f37?auto=format&fit=crop&q=80&w=600'
-  },
-  {
-    title: 'Islamic Philosophy',
-    subtitle: 'By Dr. Leganhausen',
-    tag: 'Course',
-    iconName: 'graduation-cap',
-    link: '#',
-    type: 'course',
-    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=600'
-  },
-  {
-    title: 'Mashhad Trip Highlights',
-    tag: 'Event',
-    iconName: 'map-pin',
-    link: '#',
-    type: 'event',
-    image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&q=80&w=600'
-  }
-];
+import { newsItems } from '../data/news';
 ---
 
 <section class="py-24 bg-[#f8f6f0] border-y border-gold/10 relative overflow-hidden">
@@ -51,16 +16,19 @@ const newsItems = [
         <h2 class="font-serif text-4xl text-emerald-950 mb-3">Recent <span class="italic text-gold-dark font-normal">Announcements</span></h2>
         <p class="font-sans text-emerald-900/60 text-sm tracking-wide uppercase font-bold">Latest from our research and academic departments</p>
       </div>
-      <button class="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gold-dark border border-gold/30 px-6 py-2 rounded-full hover:bg-gold hover:text-emerald-950 transition-all cursor-pointer">
-        <span>Archive</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-      </button>
+      <a 
+        href="/news" 
+        class="flex items-center space-x-3 text-[10px] font-bold uppercase tracking-widest text-gold-dark border border-gold/30 px-6 py-2 rounded-full hover:bg-gold hover:text-emerald-950 transition-all cursor-pointer"
+      >
+        <span>View More</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {newsItems.map((item) => (
+      {newsItems.slice(0, 4).map((item) => (
         <a 
-          href={item.link} 
+          href={`/news/${item.slug}`} 
           class="group bg-white rounded-[32px] border border-gold/5 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all flex flex-col h-full overflow-hidden"
         >
           <!-- Card Image -->
