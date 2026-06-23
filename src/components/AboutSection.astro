@@ -4,12 +4,12 @@ const coreAims = [
   {
     iconName: "users",
     title: "Community Leadership",
-    desc: "Training scholars who possess deep knowledge of primary texts (Quran & Ahlulbayt) to lead and foster community growth."
+    desc: "Training the next generation scholars who possess deep knowledge of primary texts (Quran & Hadith) to lead community growth."
   },
   {
     iconName: "zap",
     title: "Practical Skillsets",
-    desc: "Beyond theology, we equip scholars with vital management, counseling, and youth interaction skills."
+    desc: "Build on Islamic Worldview, we also equip scholars with vital management, counseling, and youth interaction skills."
   },
   {
     iconName: "heart",
@@ -19,25 +19,7 @@ const coreAims = [
   {
     iconName: "target",
     title: "Learn Practically",
-    desc: "Our active learning model goes beyond theory, utilizing discussion circles where logic and jurisprudence are put into direct practice."
-  }
-];
-
-const innovationAims = [
-  {
-    iconName: "laptop",
-    title: "Global Accessibility",
-    desc: "Accessible and self-paced: our Online Learning Platform (OLP) covers ideology, spirituality, and modern اجتماعی issues."
-  },
-  {
-    iconName: "book-open",
-    title: "Scholarly Research",
-    desc: "Producing rigorous English publications, academic translations, and engaging historical works."
-  },
-  {
-    iconName: "trending-up",
-    title: "Vision for Growth",
-    desc: "Expanding our Hawzah capacity through physical growth and strategic collaborative outreach."
+    desc: "Our active learning model goes beyond theory, utilizing workshops, short courses and tabligh to tunr Islamic guidance into practical strategies."
   }
 ];
 ---
@@ -102,42 +84,6 @@ const innovationAims = [
               <p class="font-sans text-sm text-emerald-950/60 leading-relaxed">{aim.desc}</p>
             </div>
           ))}
-        </div>
-
-        <!-- Innovation Row -->
-        <div class="pt-8 border-t border-gold/10">
-          <h4 class="font-serif text-2xl text-emerald-900 mb-8 italic">Expanding <span class="not-italic">New Horizons</span></h4>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {innovationAims.map((aim) => (
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3 text-gold">
-                  {aim.iconName === 'laptop' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                      <rect width="18" height="12" x="3" y="4" rx="2" ry="2"></rect>
-                      <line x1="2" x2="22" y1="20" y2="20"></line>
-                      <line x1="5" x2="19" y1="16" y2="16"></line>
-                    </svg>
-                  )}
-                  {aim.iconName === 'book-open' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
-                  )}
-                  {aim.iconName === 'trending-up' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                      <polyline points="16 7 22 7 22 13"></polyline>
-                    </svg>
-                  )}
-                  <span class="font-sans font-bold text-[10px] uppercase tracking-widest">{aim.title}</span>
-                </div>
-                <p class="font-sans text-[13px] text-emerald-900/50 leading-relaxed">
-                  {aim.desc}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
