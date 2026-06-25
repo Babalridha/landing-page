@@ -25,8 +25,8 @@ const departments = [
     title: 'BRISC',
     subtitle: 'Intensive Short Course',
     desc: 'Intensive 3-weeks course on Islamic education and tarbiyah',
-    iconName: 'laptop',
-    linkText: 'brisc.babalridha.com',
+    iconName: 'graduation-cap',
+    linkText: 'View Details',
     link: 'https://brisc.babalridha.com',
     image: briscImg
   },
@@ -34,17 +34,17 @@ const departments = [
     title: 'OLP',
     subtitle: 'Online Learning Platform',
     desc: 'Self-paced Islamic learning in a structured way',
-    iconName: 'graduation-cap',
+    iconName: 'laptop',
     linkText: 'Explore Courses',
-    link: '#',
+    link: 'https://onlinelearning.babalridha.com',
     image: olpImg
   },
   {
     title: 'RP',
     subtitle: 'Research & Publication',
     desc: 'Translating and publishing critical texts for the modern reader.',
-    iconName: 'globe',
-    linkText: 'publications.babalridha.com',
+    iconName: 'feather',
+    linkText: 'View Books',
     link: 'https://publications.babalridha.com',
     image: rpImg
   },
@@ -52,8 +52,8 @@ const departments = [
     title: 'Ahsan',
     subtitle: 'Gap Year Program',
     desc: 'An 8 months intensive Islamic education and tarbiyah course for a lifelong personal and community impact',
-    iconName: 'heart',
-    linkText: 'ahsan.babalridha.com',
+    iconName: 'sparkles',
+    linkText: 'View Details',
     link: 'https://ahsan.babalridha.com',
     image: ahsanImg
   },
@@ -84,7 +84,7 @@ const departments = [
     iconName: 'heart',
     linkText: 'Coming Soon',
     link: '#',
-    image: kidsImg,
+    image: lecturesImg,
     comingSoon: true
   },
   {
@@ -126,11 +126,11 @@ const departments = [
           <div class="absolute inset-0 bg-gradient-to-r from-emerald-950 via-transparent to-transparent hidden md:block"></div>
         </div>
         <div class="flex-1 p-8 md:p-12 relative z-10 text-ivory">
-          <div class="inline-flex items-center space-x-2 text-gold mb-6 uppercase font-bold tracking-[0.2em] text-[10px]">
+          <!-- <div class="inline-flex items-center space-x-2 text-gold mb-6 uppercase font-bold tracking-[0.2em] text-[10px]"> -->
             <!-- BookOpen Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            <span>The Core Foundation</span>
-          </div>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> -->
+            <!-- <span>The Core Foundation</span> -->
+          <!-- </div> -->
           <h3 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 italic">{hawzaDept.title}</h3>
           <p class="font-sans text-gold-light/80 uppercase tracking-widest text-xs font-bold mb-6">{hawzaDept.subtitle}</p>
           <p class="font-sans text-lg text-ivory/80 leading-relaxed max-w-2xl mb-8">
@@ -150,7 +150,7 @@ const departments = [
       {departments.map((dept) => (
         <a 
           href={dept.link}
-          class="group relative h-[360px] flex flex-col justify-between p-8 rounded-[32px] border-2 border-gold/10 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl overflow-hidden bg-white text-emerald-900 hover:border-gold/40"
+          class={`group relative h-[360px] flex flex-col justify-between p-8 rounded-[32px] border-2 border-gold/10 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl overflow-hidden bg-white text-emerald-900 hover:border-gold/40 ${dept.comingSoon ? 'opacity-55 hover:opacity-100' : ''}`}
         >
           <!-- Background Image with Dark Overlay -->
           <Image 
@@ -186,6 +186,12 @@ const departments = [
                 )}
                 {dept.iconName === 'smile' && (
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+                )}
+                {dept.iconName === 'feather' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" x2="2" y1="8" y2="22"/><line x1="17.5" x2="15" y1="15" y2="17.5"/></svg>
+                )}
+                {dept.iconName === 'sparkles' && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-emerald-900 group-hover:text-emerald-950 transition-colors"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
                 )}
               </div>
               {dept.comingSoon && (
