@@ -2,12 +2,12 @@
 import { Image } from 'astro:assets';
 import hawzaImg from "../assets/images/Hawza.jpg";
 import olpImg from "../assets/images/OLP.jpg";
-import briscImg from "../assets/images/BRISC.jpg";
+import briscImg from "../assets/images/BRISC.webp";
 import rpImg from "../assets/images/RP.jpg";
-import maImg from "../assets/images/MA.jpg";
 import ahsanImg from "../assets/images/ahsan.webp";
-import lecturesImg from "../assets/images/lectures.jpeg";
 import backpackersImg from "../assets/images/backpackers.jpg";
+import lecturesImg from "../assets/images/lectures.jpg";
+import raisingReadyImg from "../assets/images/raisingThemReady.jpeg";
 import kidsImg from "../assets/images/kids.jpg";
 
 const hawzaDept = {
@@ -72,10 +72,9 @@ const departments = [
     subtitle: '',
     desc: 'Database of lectures from scholars of the Institute',
     iconName: 'play-circle',
-    linkText: 'Coming Soon',
-    link: '#',
+    linkText: 'Browser Lectures',
+    link: 'https://lectures.babalridha.com',
     image: lecturesImg,
-    comingSoon: true
   },
     {
     title: 'Raising Them Ready',
@@ -84,7 +83,7 @@ const departments = [
     iconName: 'heart',
     linkText: 'Coming Soon',
     link: '#',
-    image: lecturesImg,
+    image: raisingReadyImg,
     comingSoon: true
   },
   {
@@ -92,10 +91,9 @@ const departments = [
     subtitle: '',
     desc: 'Unique and innovative resources for young kids to strenghten their faith',
     iconName: 'smile',
-    linkText: 'Coming Soon',
-    link: '#',
+    linkText: 'View Stories',
+    link: 'https://kids.babalridha.com',
     image: kidsImg,
-    comingSoon: true
   }
 ];
 ---
