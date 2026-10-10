@@ -4,12 +4,15 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  robots?: string;
 }
 
 const { 
   title = "Bab al-Ridha Institute | Seeing the World Through an Islamic Lens",
-  description = "A sophisticated digital gateway for the Bab al-Ridha Institute, emphasizing an Islamic lens for the modern world through elegant UI/UX and scholarly excellence."
+  description = "A sophisticated digital gateway for the Bab al-Ridha Institute, emphasizing an Islamic lens for the modern world through elegant UI/UX and scholarly excellence.",
+  robots
 } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -19,6 +22,8 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     
